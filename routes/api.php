@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\NewsRatingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::apiResource('news', NewsController::class)->only(['index', 'show']);
+
+Route::patch('/news/{news}/rating', NewsRatingController::class);
