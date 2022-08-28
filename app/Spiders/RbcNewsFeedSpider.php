@@ -58,7 +58,7 @@ class RbcNewsFeedSpider extends BasicSpider
 
         yield $this->item([
             'title' => $title,
-            'content' => implode('', $content),
+            'content' => implode(' ', $content),
             'original_url' => $response->getUri(),
             'image_url' => $imageUrl,
         ]);

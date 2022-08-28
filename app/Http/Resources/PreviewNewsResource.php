@@ -24,6 +24,7 @@ class PreviewNewsResource extends JsonResource
             'slug' => $this->slug,
             'content' => Str::limit($this->content, self::CONTENT_LENGTH_LIMIT, ''),
             'rating' => $this->rating,
+            'original_url' => $this->original_url,
         ];
     }
 }

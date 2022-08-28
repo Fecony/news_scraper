@@ -15,7 +15,7 @@ class NewsController extends Controller
      */
     public function index(): NewsCollection
     {
-        return new NewsCollection(News::query()->paginate());
+        return new NewsCollection(News::query()->latest()->paginate());
     }
 
     /**
